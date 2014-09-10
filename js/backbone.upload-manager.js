@@ -201,9 +201,9 @@
 
             // Add cancel all handler
             $('button#' + this.options.cancelUploadsId, this.el).click(function(){
-                self.files.each(function(file){
-                    file.cancel();
-                });
+                while (self.files.length) {
+                    self.files.at(0).cancel();
+                }
             });
 
             // Add start uploads handler
